@@ -88,7 +88,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.ShowSpellTimers = true;
 						else
 							NecrosisConfig.ShowSpellTimers = false;
@@ -109,7 +109,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.SpellTimerPos = -1;
 							NecrosisConfig.SpellTimerJust = "RIGHT";
 							AnchorSpellTimerTooltip = "ANCHOR_LEFT"
@@ -137,7 +137,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						NecrosisConfig.Graphical = this:GetChecked();
+						NecrosisConfig.Graphical = self:GetChecked();
 						Necrosis_HideGraphTimer();
 					</OnClick>
 				</Scripts>
@@ -155,7 +155,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						NecrosisConfig.Yellow = not this:GetChecked();
+						NecrosisConfig.Yellow = not self:GetChecked();
 					</OnClick>
 				</Scripts>
 			</CheckButton>
@@ -172,7 +172,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.SensListe = -1;
 						else
 							NecrosisConfig.SensListe = 1;
@@ -193,18 +193,18 @@
 				</Anchors>
 				<Scripts>
 					<OnEnter>
-						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
-						GameTooltip:SetText(this:GetValue());
+						GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
+						GameTooltip:SetText(self:GetValue());
 					</OnEnter>
 					<OnValueChanged>
-						GameTooltip:SetText(this:GetValue());
+						GameTooltip:SetText(self:GetValue());
 					</OnValueChanged>
 					<OnLeave>
 						GameTooltip:Hide();
 					</OnLeave>
 					<OnMouseUp>
-						GameTooltip:SetText(this:GetValue());
-						NecrosisConfig.TimerBarHeight = this:GetValue();
+						GameTooltip:SetText(self:GetValue());
+						NecrosisConfig.TimerBarHeight = self:GetValue();
 						<!-- Necrosis_SoulshardSwitch("MOVE"); -->
 					</OnMouseUp>
 				</Scripts>

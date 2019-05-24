@@ -11,7 +11,7 @@
 			<AbsInset left="0" right="35" top="0" bottom="75"/>
 		</HitRectInsets>
 		<Layers>
-			<Layer level="ARTWORK">	
+			<Layer level="ARTWORK">
 				<FontString name="NecrosisShowTrance_Option" inherits="GameFontNormalSmall">
 					<Color r="1.0" g="1.0" b="1.0" a="1"/>
 					<Anchors>
@@ -88,13 +88,13 @@
 				</Anchors>
 				<Scripts>
 					<OnEnter>
-						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
-						GameTooltip:SetText(this:GetValue());
+						GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
+						GameTooltip:SetText(self:GetValue());
 					</OnEnter>
 					<OnValueChanged>
-						NecrosisConfig.NecrosisAngle = this:GetValue();
+						NecrosisConfig.NecrosisAngle = self:GetValue();
 						local x, y = NecrosisButton:GetCenter();
-						GameTooltip:SetText(this:GetValue());
+						GameTooltip:SetText(self:GetValue());
 						Necrosis_UpdateButtonsScale();
 					</OnValueChanged>
 					<OnLeave>
@@ -113,19 +113,19 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
-				<Scripts>	
+				<Scripts>
 					<OnEnter>
 						NBx, NBy = NecrosisButton:GetCenter();
 						NBx = NBx * (NecrosisConfig.NecrosisButtonScale / 100);
 						NBy = NBy * (NecrosisConfig.NecrosisButtonScale / 100);
-						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
-						GameTooltip:SetText(this:GetValue().." %");
+						GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
+						GameTooltip:SetText(self:GetValue().." %");
 					</OnEnter>
 					<OnValueChanged>
-						if this:GetValue() ~= NecrosisConfig.NecrosisButtonScale then
+						if self:GetValue() ~= NecrosisConfig.NecrosisButtonScale then
 							NecrosisButton:ClearAllPoints();
-							GameTooltip:SetText(this:GetValue().." %");
-							NecrosisConfig.NecrosisButtonScale = this:GetValue();
+							GameTooltip:SetText(self:GetValue().." %");
+							NecrosisConfig.NecrosisButtonScale = self:GetValue();
 							NecrosisButton:SetPoint("CENTER", "UIParent", "BOTTOMLEFT", NBx / (NecrosisConfig.NecrosisButtonScale / 100), NBy / (NecrosisConfig.NecrosisButtonScale / 100));
 							NecrosisButton:SetScale(NecrosisConfig.NecrosisButtonScale / 100);
 							Necrosis_UpdateButtonsScale();
@@ -157,13 +157,13 @@
 						AFy = AFy * (NecrosisConfig.ShadowTranceScale / 100);
 						ShowUIPanel(NecrosisShadowTranceButton);
 						ShowUIPanel(NecrosisAntiFearButton);
-						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
-						GameTooltip:SetText(this:GetValue().."%");
+						GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
+						GameTooltip:SetText(self:GetValue().."%");
 					</OnEnter>
 					<OnValueChanged>
-						if this:GetValue() ~= NecrosisConfig.ShadowTranceScale then
-							GameTooltip:SetText(this:GetValue().."%");
-							NecrosisConfig.ShadowTranceScale = this:GetValue();
+						if self:GetValue() ~= NecrosisConfig.ShadowTranceScale then
+							GameTooltip:SetText(self:GetValue().."%");
+							NecrosisConfig.ShadowTranceScale = self:GetValue();
 							NecrosisShadowTranceButton:ClearAllPoints();
 							NecrosisShadowTranceButton:SetPoint("CENTER", "UIParent", "BOTTOMLEFT", STx / (NecrosisConfig.ShadowTranceScale / 100), STy / (NecrosisConfig.ShadowTranceScale / 100));
 							NecrosisShadowTranceButton:SetScale(NecrosisConfig.ShadowTranceScale / 100);
@@ -194,7 +194,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							ShowUIPanel(NecrosisShadowTranceButton);
 							ShowUIPanel(NecrosisAntiFearButton);
 							NecrosisShadowTranceButton:RegisterForDrag("LeftButton")
@@ -221,7 +221,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.NecrosisLockServ = true;
 							Necrosis_ClearAllPoints();
 							Necrosis_UpdateButtonsScale();
@@ -263,7 +263,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							Necrosis_NoDrag();
 							NecrosisButton:RegisterForDrag("");
 							NecrosisSpellTimerButton:RegisterForDrag("");
@@ -292,12 +292,12 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.BuffMenuPos = -34;
 						else
 							NecrosisConfig.BuffMenuPos = 34;
 						end
-						Necrosis_CreateMenu();							
+						Necrosis_CreateMenu();
 					</OnClick>
 				</Scripts>
 			</CheckButton>
@@ -314,12 +314,12 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.PetMenuPos = -34;
 						else
 							NecrosisConfig.PetMenuPos = 34;
 						end
-						Necrosis_CreateMenu();						
+						Necrosis_CreateMenu();
 					</OnClick>
 				</Scripts>
 			</CheckButton>
@@ -336,12 +336,12 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.CurseMenuPos = -34;
 						else
 							NecrosisConfig.CurseMenuPos = 34;
 						end
-						Necrosis_CreateMenu();						
+						Necrosis_CreateMenu();
 					</OnClick>
 				</Scripts>
 			</CheckButton>

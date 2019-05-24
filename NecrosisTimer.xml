@@ -2026,7 +2026,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2061,7 +2061,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2096,7 +2096,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2131,7 +2131,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2166,7 +2166,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2201,7 +2201,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2236,7 +2236,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2271,7 +2271,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2306,7 +2306,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2341,7 +2341,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2376,7 +2376,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2411,7 +2411,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2446,7 +2446,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2481,7 +2481,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2516,7 +2516,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2551,7 +2551,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2586,7 +2586,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2621,7 +2621,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2656,7 +2656,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2691,7 +2691,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2726,7 +2726,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2761,7 +2761,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2796,7 +2796,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2831,7 +2831,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2866,7 +2866,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2901,7 +2901,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2936,7 +2936,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -2971,7 +2971,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3006,7 +3006,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3041,7 +3041,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3076,7 +3076,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3111,7 +3111,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3146,7 +3146,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3181,7 +3181,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3216,7 +3216,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3251,7 +3251,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3286,7 +3286,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3321,7 +3321,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3356,7 +3356,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3391,7 +3391,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3426,7 +3426,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3461,7 +3461,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3496,7 +3496,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3531,7 +3531,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3566,7 +3566,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3601,7 +3601,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3636,7 +3636,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3671,7 +3671,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3706,7 +3706,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
@@ -3741,7 +3741,7 @@
 				</Layers>
 				<Scripts>
 					<OnLoad>
-						this:SetFrameLevel(this:GetFrameLevel() - 1)
+						self:SetFrameLevel(self:GetFrameLevel() - 1)
 					</OnLoad>
 				</Scripts>
 				<BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>

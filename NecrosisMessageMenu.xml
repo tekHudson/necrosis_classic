@@ -21,7 +21,7 @@
 							</Offset>
 						</Anchor>
 					</Anchors>
-				</FontString>	
+				</FontString>
 				<FontString name="NecrosisAntiFearAlert_Option" inherits="GameFontNormalSmall">
 					<Color r="1.0" g="1.0" b="1.0" a="1"/>
 					<Anchors>
@@ -128,22 +128,22 @@
 				</Anchors>
 				<Scripts>
 				<OnEnter>
-					GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
-						if (this:GetValue() == 1) then
+					GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
+						if (self:GetValue() == 1) then
 							GameTooltip:SetText("Francais");
-						elseif (this:GetValue() == 2) then
+						elseif (self:GetValue() == 2) then
 							GameTooltip:SetText("English");
 						else
 							GameTooltip:SetText("Deutsch");
 						end
 					</OnEnter>
 					<OnValueChanged>
-						GameTooltip:SetText(this:GetValue());
-						if (this:GetValue() == 1) then
+						GameTooltip:SetText(self:GetValue());
+						if (self:GetValue() == 1) then
 							GameTooltip:SetText("Francais");
 							NecrosisConfig.NecrosisLanguage = "frFR";
 							Necrosis_Localization_Dialog_Fr();
-						elseif (this:GetValue() == 2) then
+						elseif (self:GetValue() == 2) then
 							GameTooltip:SetText("English");
 							NecrosisConfig.NecrosisLanguage = "enUS";
 							Necrosis_Localization_Dialog_En();
@@ -159,7 +159,7 @@
 					</OnLeave>
 				</Scripts>
 			</Slider>
-			
+
 			<CheckButton name="NecrosisAntiFearAlert_Button" enableMouse="true" inherits="UICheckButtonTemplate" checked="false">
 				<Size>
 					<AbsDimension x="24" y="24"/>
@@ -173,7 +173,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.AntiFearAlert = true;
 						else
 							NecrosisConfig.AntiFearAlert = false;
@@ -194,7 +194,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.ShadowTranceAlert = true;
 						else
 							NecrosisConfig.ShadowTranceAlert = false;
@@ -216,7 +216,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.NecrosisToolTip = true;
 							Necrosis_Msg(NECROSIS_MESSAGE.Interface.TooltipOn, "USER");
 						else
@@ -240,7 +240,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.Sound = true;
 						else
 							NecrosisConfig.Sound = false;
@@ -261,7 +261,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.ChatType = false;
 						else
 							NecrosisConfig.ChatType = true;
@@ -283,7 +283,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.ChatMsg = true;
 						else
 							NecrosisConfig.ChatMsg = false;
@@ -304,7 +304,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.DemonSummon = true;
 						else
 							NecrosisConfig.DemonSummon = false;
@@ -325,7 +325,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.SteedSummon = true;
 						else
 							NecrosisConfig.SteedSummon = false;

@@ -12,7 +12,7 @@
 	<Script file="NecrosisMessage.lua"/>
 	<Script file="NecrosisTimerFunction.lua"/>
 	<Script file="NecrosisGraphicalTimer.lua"/>
-	
+
 	<Frame name="Necrosis_Variable_Frame" hidden="false">
 		<Scripts>
 			<OnUpdate>
@@ -20,7 +20,7 @@
 			</OnUpdate>
 		</Scripts>
 	</Frame>
-	
+
 	<Button name="NecrosisSpellTimerButton" frameStrata="MEDIUM" enableMouse="true" movable="true" parent="UIParent">
 		<Size>
 			<AbsDimension x="34" y="34"/>
@@ -48,21 +48,21 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForDrag("LeftButton");
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
-				this:Hide();
+				self:RegisterForDrag("LeftButton");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:Hide();
 			</OnLoad>
 			<OnDragStart>
-				Necrosis_OnDragStart(this);
+				Necrosis_OnDragStart(self);
 			</OnDragStart>
 			<OnDragStop>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnDragStop>
 			<OnMouseUp>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnMouseUp>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "SpellTimer", AnchorSpellTimerTooltip);
+				Necrosis_BuildTooltip(self, "SpellTimer", AnchorSpellTimerTooltip);
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -106,23 +106,23 @@
 				Necrosis_Toggle(arg1);
 			</OnClick>
 			<OnDragStart>
-				Necrosis_OnDragStart(this);
+				Necrosis_OnDragStart(self);
 			</OnDragStart>
 			<OnDragStop>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnDragStop>
 			<OnMouseUp>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnMouseUp>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Main", "ANCHOR_LEFT");
+				Necrosis_BuildTooltip(self, "Main", "ANCHOR_LEFT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
 			</OnLeave>
 			<OnLoad>
 				Necrosis_OnLoad();
-				HideUIPanel(this);
+				HideUIPanel();
 			</OnLoad>
 			<OnUpdate>
 				Necrosis_OnUpdate();
@@ -147,12 +147,12 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForDrag("LeftButton");
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
-				HideUIPanel(this);
+				self:RegisterForDrag("LeftButton");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				HideUIPanel();
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Soulstone", "ANCHOR_LEFT");
+				Necrosis_BuildTooltip(self, "Soulstone", "ANCHOR_LEFT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -161,13 +161,13 @@
 				Necrosis_UseItem("Soulstone");
 			</OnClick>
 			<OnDragStart>
-				if not NecrosisLockServ then Necrosis_OnDragStart(this); end
+				if not NecrosisLockServ then Necrosis_OnDragStart(self); end
 			</OnDragStart>
 			<OnDragStop>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnDragStop>
 			<OnMouseUp>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnMouseUp>
 		</Scripts>
 		<NormalTexture file="Interface\AddOns\Necrosis\UI\SoulstoneButton-01"/>
@@ -187,12 +187,12 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForDrag("LeftButton");
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
-				HideUIPanel(this);
+				self:RegisterForDrag("LeftButton");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				HideUIPanel();
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Healthstone", "ANCHOR_LEFT");
+				Necrosis_BuildTooltip(self, "Healthstone", "ANCHOR_LEFT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -201,13 +201,13 @@
 				Necrosis_UseItem("Healthstone");
 			</OnClick>
 			<OnDragStart>
-				if not NecrosisLockServ then Necrosis_OnDragStart(this); end
+				if not NecrosisLockServ then Necrosis_OnDragStart(self); end
 			</OnDragStart>
 			<OnDragStop>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnDragStop>
 			<OnMouseUp>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnMouseUp>
 		</Scripts>
 		<NormalTexture file="Interface\AddOns\Necrosis\UI\HealthstoneButton-01"/>
@@ -227,12 +227,12 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForDrag("LeftButton");
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
-				HideUIPanel(this);
+				self:RegisterForDrag("LeftButton");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				HideUIPanel();
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Spellstone", "ANCHOR_LEFT");
+				Necrosis_BuildTooltip(self, "Spellstone", "ANCHOR_LEFT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -241,13 +241,13 @@
 				Necrosis_UseItem("Spellstone", arg1);
 			</OnClick>
 			<OnDragStart>
-				if not NecrosisLockServ then Necrosis_OnDragStart(this); end
+				if not NecrosisLockServ then Necrosis_OnDragStart(self); end
 			</OnDragStart>
 			<OnDragStop>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnDragStop>
 			<OnMouseUp>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnMouseUp>
 		</Scripts>
 		<NormalTexture file="Interface\AddOns\Necrosis\UI\SpellstoneButton-01"/>
@@ -267,12 +267,12 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForDrag("LeftButton");
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
-				HideUIPanel(this);
+				self:RegisterForDrag("LeftButton");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				HideUIPanel();
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Firestone", "ANCHOR_LEFT");
+				Necrosis_BuildTooltip(self, "Firestone", "ANCHOR_LEFT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -281,19 +281,19 @@
 				Necrosis_UseItem("Firestone", arg1);
 			</OnClick>
 			<OnDragStart>
-				if not NecrosisLockServ then Necrosis_OnDragStart(this); end
+				if not NecrosisLockServ then Necrosis_OnDragStart(self); end
 			</OnDragStart>
 			<OnDragStop>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnDragStop>
 			<OnMouseUp>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnMouseUp>
 		</Scripts>
 		<NormalTexture file="Interface\AddOns\Necrosis\UI\FirestoneButton-01"/>
 		<HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/>
 	</Button>
-	
+
 	<Button name="NecrosisMountButton" hidden="false" enableMouse="true"  toplevel="true" parent="UIParent" movable="true">
 		<Size>
 			<AbsDimension x="34" y="34"/>
@@ -307,12 +307,12 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForDrag("LeftButton");
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
-				HideUIPanel(this);
+				self:RegisterForDrag("LeftButton");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				HideUIPanel();
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Mount", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Mount", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -321,13 +321,13 @@
 				Necrosis_UseItem("Mount");
 			</OnClick>
 			<OnDragStart>
-				if not NecrosisLockServ then Necrosis_OnDragStart(this); end
+				if not NecrosisLockServ then Necrosis_OnDragStart(self); end
 			</OnDragStart>
 			<OnDragStop>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnDragStop>
 			<OnMouseUp>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnMouseUp>
 		</Scripts>
 		<NormalTexture file="Interface\AddOns\Necrosis\UI\MountButton-01"/>
@@ -347,12 +347,12 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForDrag("LeftButton");
-				this:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
-				HideUIPanel(this);
+				self:RegisterForDrag("LeftButton");
+				self:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
+				HideUIPanel();
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Buff", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Buff", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -361,13 +361,13 @@
 				Necrosis_BuffMenu(arg1);
 			</OnClick>
 			<OnDragStart>
-				if not NecrosisLockServ then Necrosis_OnDragStart(this); end
+				if not NecrosisLockServ then Necrosis_OnDragStart(self); end
 			</OnDragStart>
 			<OnDragStop>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnDragStop>
 			<OnMouseUp>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnMouseUp>
 		</Scripts>
 		<NormalTexture file="Interface\AddOns\Necrosis\UI\BuffMenuButton-01"/>
@@ -387,11 +387,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisBuffMenu1);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Armor", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Armor", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -416,11 +416,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisBuffMenu2);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Aqua", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Aqua", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -445,11 +445,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisBuffMenu3);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Invisible", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Invisible", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -474,11 +474,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisBuffMenu4);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Kilrogg", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Kilrogg", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -503,11 +503,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisBuffMenu5);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "TP", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "TP", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -532,11 +532,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisBuffMenu6);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Radar", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Radar", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -561,11 +561,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisBuffMenu7);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "SoulLink", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "SoulLink", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -590,11 +590,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisBuffMenu8);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "ShadowProtection", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "ShadowProtection", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -619,11 +619,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisBuffMenu9);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Banish", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Banish", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -635,7 +635,7 @@
 		<NormalTexture file="Interface\AddOns\Necrosis\UI\Banish-01"/>
 		<HighlightTexture file="Interface\AddOns\Necrosis\UI\Banish-02"/>
 	</Button>
-	
+
 	<Button name="NecrosisPetMenuButton" hidden="false" enableMouse="true"  toplevel="true" parent="UIParent" movable="true">
 		<Size>
 			<AbsDimension x="34" y="34"/>
@@ -649,12 +649,12 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForDrag("LeftButton");
-				this:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
-				HideUIPanel(this);
+				self:RegisterForDrag("LeftButton");
+				self:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
+				HideUIPanel();
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Pet", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Pet", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -663,19 +663,19 @@
 				Necrosis_PetMenu(arg1);
 			</OnClick>
 			<OnDragStart>
-				if not NecrosisLockServ then Necrosis_OnDragStart(this); end
+				if not NecrosisLockServ then Necrosis_OnDragStart(self); end
 			</OnDragStart>
 			<OnDragStop>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnDragStop>
 			<OnMouseUp>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnMouseUp>
 		</Scripts>
 		<NormalTexture file="Interface\AddOns\Necrosis\UI\PetMenuButton-01"/>
 		<HighlightTexture file="Interface\AddOns\Necrosis\UI\PetMenuButton-02"/>
 	</Button>
-	
+
 	<Button name="NecrosisPetMenu1" hidden="false" enableMouse="true"  toplevel="true" parent="UIParent" movable="true">
 		<Size>
 			<AbsDimension x="40" y="40"/>
@@ -689,11 +689,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisPetMenu1);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Domination", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Domination", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -705,7 +705,7 @@
 		<NormalTexture file="Interface\AddOns\Necrosis\UI\Domination-01"/>
 		<HighlightTexture file="Interface\AddOns\Necrosis\UI\Domination-02"/>
 	</Button>
-	
+
 	<Button name="NecrosisPetMenu2" hidden="false" enableMouse="true"  toplevel="true" parent="UIParent" movable="true">
 		<Size>
 			<AbsDimension x="40" y="40"/>
@@ -719,11 +719,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisPetMenu2);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Imp", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Imp", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -735,7 +735,7 @@
 		<NormalTexture file="Interface\AddOns\Necrosis\UI\Imp-01"/>
 		<HighlightTexture file="Interface\AddOns\Necrosis\UI\Imp-02"/>
 	</Button>
-	
+
 	<Button name="NecrosisPetMenu3" hidden="false" enableMouse="true"  toplevel="true" parent="UIParent" movable="true">
 		<Size>
 			<AbsDimension x="40" y="40"/>
@@ -749,11 +749,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisPetMenu3);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Void", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Void", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -765,7 +765,7 @@
 		<NormalTexture file="Interface\AddOns\Necrosis\UI\Voidwalker-01"/>
 		<HighlightTexture file="Interface\AddOns\Necrosis\UI\Voidwalker-02"/>
 	</Button>
-	
+
 	<Button name="NecrosisPetMenu4" hidden="false" enableMouse="true"  toplevel="true" parent="UIParent" movable="true">
 		<Size>
 			<AbsDimension x="40" y="40"/>
@@ -779,11 +779,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisPetMenu4);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Succubus", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Succubus", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -795,7 +795,7 @@
 		<NormalTexture file="Interface\AddOns\Necrosis\UI\Succubus-01"/>
 		<HighlightTexture file="Interface\AddOns\Necrosis\UI\Succubus-02"/>
 	</Button>
-	
+
 	<Button name="NecrosisPetMenu5" hidden="false" enableMouse="true"  toplevel="true" parent="UIParent" movable="true">
 		<Size>
 			<AbsDimension x="40" y="40"/>
@@ -809,11 +809,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisPetMenu5);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Fel", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Fel", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -825,7 +825,7 @@
 		<NormalTexture file="Interface\AddOns\Necrosis\UI\Felhunter-01"/>
 		<HighlightTexture file="Interface\AddOns\Necrosis\UI\Felhunter-02"/>
 	</Button>
-	
+
 	<Button name="NecrosisPetMenu6" hidden="false" enableMouse="true"  toplevel="true" parent="UIParent" movable="true">
 		<Size>
 			<AbsDimension x="40" y="40"/>
@@ -839,11 +839,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisPetMenu6);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Infernal", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Infernal", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -869,11 +869,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisPetMenu7);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Doomguard", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Doomguard", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -898,11 +898,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisPetMenu8);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Enslave", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Enslave", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -927,11 +927,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisPetMenu9);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Sacrifice", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Sacrifice", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -944,7 +944,7 @@
 		<HighlightTexture file="Interface\AddOns\Necrosis\UI\Sacrifice-02"/>
 	</Button>
 
-	
+
 	<Button name="NecrosisCurseMenuButton" hidden="false" enableMouse="true"  toplevel="true" parent="UIParent" movable="true">
 		<Size>
 			<AbsDimension x="34" y="34"/>
@@ -958,12 +958,12 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForDrag("LeftButton");
-				this:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
-				HideUIPanel(this);
+				self:RegisterForDrag("LeftButton");
+				self:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
+				HideUIPanel();
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Curse", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Curse", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -972,13 +972,13 @@
 				Necrosis_CurseMenu(arg1);
 			</OnClick>
 			<OnDragStart>
-				if not NecrosisLockServ then Necrosis_OnDragStart(this); end
+				if not NecrosisLockServ then Necrosis_OnDragStart(self); end
 			</OnDragStart>
 			<OnDragStop>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnDragStop>
 			<OnMouseUp>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnMouseUp>
 		</Scripts>
 		<NormalTexture file="Interface\AddOns\Necrosis\UI\CurseMenuButton-01"/>
@@ -998,11 +998,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisCurseMenu1);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Amplify", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Amplify", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -1027,11 +1027,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisCurseMenu2);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Weakness", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Weakness", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -1056,11 +1056,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisCurseMenu3);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Agony", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Agony", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -1085,11 +1085,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisCurseMenu4);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Reckless", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Reckless", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -1114,11 +1114,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisCurseMenu5);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Tongues", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Tongues", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -1143,11 +1143,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisCurseMenu6);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Exhaust", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Exhaust", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -1172,11 +1172,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisCurseMenu7);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Elements", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Elements", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -1201,11 +1201,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisCurseMenu8);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Shadow", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Shadow", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -1230,11 +1230,11 @@
 		</Anchors>
 		<Scripts>
 			<OnLoad>
-				this:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
+				self:RegisterForClicks("LeftButtonUp", "MiddleButtonUp", "RightButtonUp");
 				HideUIPanel(NecrosisCurseMenu9);
 			</OnLoad>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "Doom", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "Doom", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -1274,16 +1274,16 @@
 		</Layers>
 		<Scripts>
 			<OnDragStart>
-				Necrosis_OnDragStart(this);
+				Necrosis_OnDragStart(self);
 			</OnDragStart>
 			<OnDragStop>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnDragStop>
 			<OnMouseUp>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnMouseUp>
 			<OnEnter>
-				Necrosis_BuildTooltip(this, "ShadowTrance", "ANCHOR_RIGHT");
+				Necrosis_BuildTooltip(self, "ShadowTrance", "ANCHOR_RIGHT");
 			</OnEnter>
 			<OnLeave>
 				GameTooltip:Hide();
@@ -1299,7 +1299,7 @@
 		<PushedTexture file="Interface\Addons\Necrosis\UI\ShadowTrance-Icon-03"/>
 		<HighlightTexture file="Interface\Addons\Necrosis\UI\ShadowTrance-Icon-02"/>
 	</Button>
-	
+
 	<Button name="NecrosisAntiFearButton" frameStrata="MEDIUM" movable="true" parent="UIParent">
 		<Size>
 			<AbsDimension x="43" y="43"/>
@@ -1313,13 +1313,13 @@
 		</Anchors>
 		<Scripts>
 			<OnDragStart>
-				Necrosis_OnDragStart(this);
+				Necrosis_OnDragStart(self);
 			</OnDragStart>
 			<OnDragStop>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnDragStop>
 			<OnMouseUp>
-				Necrosis_OnDragStop(this);
+				Necrosis_OnDragStop(self);
 			</OnMouseUp>
 			<OnLoad>
 				HideUIPanel(NecrosisAntiFearButton);
@@ -1328,6 +1328,6 @@
 		<NormalTexture file="Interface\Addons\Necrosis\UI\AntiFear-01"/>
 		<HighlightTexture file="Interface\Addons\Necrosis\UI\AntiFear-02"/>
 	</Button>
-		
+
 	<GameTooltip name="NecrosisTooltip" frameStrata="LOW" toplevel="true" movable="true" parent="UIParent" inherits="GameTooltipTemplate" />
 </Ui>

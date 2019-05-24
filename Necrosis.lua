@@ -1,18 +1,20 @@
 ------------------------------------------------------------------------------------------------------
+
 -- Necrosis LdC
 --
--- Créateur initial (US) : Infernal (http://www.revolvus.com/games/interface/necrosis/)
--- Implémentation de base (FR) : Tilienna Thorondor
--- Reprise du projet : Lomig & Nyx des Larmes de Cenarius, Kael'Thas
+-- Initial Creator (US): Infernal (http://www.revolvus.com/games/interface/necrosis/)
+-- Basic implementation (FR): Tilienna Thorondor
+-- Resumption of the project: Lomig & Nyx Tears of Cenarius, Kael'Thas
+-- Port to Wow Classic: Tek
 --
--- Skins et voix Françaises : Eliah, Ner'zhul
--- Version Allemande par Arne Meier et Halisstra, Lothar
--- Remerciements spéciaux pour Sadyre (JoL)
+-- French Skins and Voices: Eliah, Ner'zhul
+-- German version by Arne Meier and Halisstra, Lothar
+-- Special thanks for Sadyre (JoL)
 -- Version 05.09.2006-1
 ------------------------------------------------------------------------------------------------------
 
--- Configuration par défaut
--- Se charge en cas d'absence de configuration ou de changement de version
+-- Default configuration
+-- Loads in case of no configuration or version change
 Default_NecrosisConfig = {
 	Version = NecrosisData.Version;
 	SoulshardContainer = 4;
@@ -63,19 +65,19 @@ NecrosisConfig = {};
 local Debug = false;
 local Loaded = false
 
--- Détection des initialisations du mod
+-- Mod boot initialization detection
 local NecrosisRL = true;
 
--- Initialisation des variables utilisées par Necrosis pour la gestion des sorts lancés
+-- Initialization of the variables used by Necrosis for the management of launched spells
 local SpellCastName = nil;
 local SpellCastRank = nil;
 local SpellTargetName = nil;
 local SpellTargetLevel = nil;
 local SpellCastTime = 0;
 
--- Initialisation des tableaux gérant les Timers
--- Un pour les sorts à timer, l'autre pour les groupes de mobs
--- Le dernier permet l'association d'un timer à une frame graphique
+-- Initialization of tables managing Timers
+-- One for timer spells, the other for groups of mobs
+-- The last allows the association of a timer to a graphic frame
 SpellTimer = {};
 local SpellGroup = {
 	Name = {"Rez", "Main", "Cooldown"},
@@ -88,7 +90,7 @@ for i = 1, 50, 1 do
 	TimerTable[i] = false;
 end
 
--- Menus : Permet l'affichage des menus de buff et de pet
+-- Menus: Allows the display of buff and fart menus
 local PetShow = false;
 local PetMenuShow = false;
 local BuffShow = false;
@@ -96,45 +98,45 @@ local BuffMenuShow = false;
 local CurseShow = false;
 local CurseMenuShow = false;
 
--- Menus : Permet la disparition progressive du menu des pets (transparence)
+-- Menus : Allows the progressive disappearance of the pets menu (transparency)
 local AlphaPetMenu = 1;
 local AlphaPetVar = 0;
 local PetVisible = false;
 
--- Menus : Permet la disparition progressive du menu des buffs (transparence)
+-- Menus : Allows the progressive disappearance of the buffs menu (transparency)
 local AlphaBuffMenu = 1;
 local AlphaBuffVar = 0;
 local BuffVisible = false;
 
--- Menus : Permet la disparition progressive du menu des curses (transparence)
+-- Menus : Allows the progressive disappearance of the curses menu (transparency)
 local AlphaCurseMenu = 1;
 local AlphaCurseVar = 0;
 local CurseVisible = false;
 
--- Menus : Permet de recaster le dernier cast du menu en cliquant milieu sur celui-ci
+-- Menus : Allows you to recaster the last cast of the menu by clicking middle on it
 local LastDemon = 0;
 local LastBuff = 0;
 local LastCurse = 0;
 local LastCurseClick = "LeftButton";
 
--- Liste des boutons disponible pour le démoniste dans chaque menu
+-- List of buttons available for the warlock in each menu
 local PetMenuCreate = {};
 local BuffMenuCreate = {};
 local CurseMenuCreate = {};
 
--- Variables utilisées pour la gestion des montures
+-- Variables used for frame management
 local MountAvailable = false;
 local NecrosisMounted = false;
 local NecrosisTellMounted = true;
 local PlayerCombat = false;
 
--- Variables utilisées pour la gestion des transes de l'ombre
+-- Variables used for shadow trance management
 local ShadowTrance = false;
 local AntiFearInUse = false;
 local ShadowTranceID = -1;
 
--- Variables utilisées pour la gestion des fragments d'âme
--- (principalement comptage)
+-- Variables used for the management of soul fragments
+-- (mainly counting)
 local Soulshards = 0;
 local SoulshardContainer = 4;
 local SoulshardSlot = {};
@@ -142,13 +144,13 @@ local SoulshardSlotID = 1;
 local SoulshardMP = 0;
 local SoulshardTime = 0;
 
--- Variables utilisées pour la gestion des composants d'invocation
--- (principalement comptage)
+-- Variables used for managing invocation components
+-- (mainly counting)
 local InfernalStone = 0;
 local DemoniacStone = 0;
 
 
--- Variables utilisées pour la gestion des boutons d'invocation et d'utilisation des pierres
+-- Variables used for managing summoning and stone buttons
 local StoneIDInSpellTable = {0, 0, 0, 0}
 local SoulstoneUsedOnTarget = false;
 local SoulstoneOnHand = false;
@@ -168,69 +170,66 @@ local HearthstoneLocation = {nil,nil};
 local ItemswitchLocation = {nil,nil};
 local ItemOnHand = false;
 
--- Variables gérant la possibilité ou l'impossibilité d'utiliser un timer de rez
+-- Variables managing the possibility or the impossibility to use a timer of rez
 local SoulstoneWaiting = false;
 local SoulstoneCooldown = false;
 local SoulstoneAdvice = false;
 local SoulstoneTarget = "";
 
--- Variables utilisées dans la gestion des démons
+-- Variables used in demon management
 local DemonType = nil;
 local DemonEnslaved = false;
 
--- Variables utilisées pour l'anti-fear
+-- Variables used for anti-fear
 local AFblink1, AFBlink2 = 0;
 local AFImageType = { "", "Immu", "Prot"}; -- Fear warning button filename variations
 local AFCurrentTargetImmune = false;
 
--- Variables utilisées pour les échanges de pierre avec les joueurs
+-- Variables used for stone trading with players
 local NecrosisTradeRequest = false;
 local Trading = false;
 local TradingNow = 0;
 
--- Gestion des sacs à fragment d'âme
+-- Management of soul fragment bags
 local BagIsSoulPouch = {nil, nil, nil, nil, nil};
 
--- Variable contenant les derniers messages invoqués
+-- Variable containing the last messages invoked
 local PetMess = 0
 local SteedMess = 0
 local RezMess = 0
 local TPMess = 0
 
--- Permet la gestion des tooltips dans Necrosis (sans la frame des pièces de monnaie)
+-- Allows management of tooltips in Necrosis (without the frame of the coins)
 local lOriginal_GameTooltip_ClearMoney;
 
 local Necrosis_In = true;
 
 ------------------------------------------------------------------------------------------------------
--- FONCTIONS NECROSIS APPLIQUEES A L'ENTREE DANS LE JEU
+-- NECROSIS FUNCTIONS APPLIED TO ENTRY IN THE GAME
 ------------------------------------------------------------------------------------------------------
 
 
--- Fonction appliquée au chargement
+-- Function applied to loading
 function Necrosis_OnLoad()
 
-	-- Permet de repérer les sorts lancés
+	-- Allows spells to be spotted
 	Necrosis_Hook("UseAction", "Necrosis_UseAction", "before");
 	Necrosis_Hook("CastSpell", "Necrosis_CastSpell", "before");
 	Necrosis_Hook("CastSpellByName", "Necrosis_CastSpellByName", "before");
 
-	-- Enregistrement des événements interceptés par Necrosis
-	this:RegisterEvent("PLAYER_ENTERING_WORLD");
-	this:RegisterEvent("PLAYER_LEAVING_WORLD");
+	-- Recording of events intercepted by Necrosis
+	NecrosisGeneralFrame:RegisterEvent("PLAYER_ENTERING_WORLD");
+	NecrosisGeneralFrame:RegisterEvent("PLAYER_LEAVING_WORLD");
 	NecrosisButton:RegisterEvent("BAG_UPDATE");
-	NecrosisButton:RegisterEvent("CHAT_MSG_SPELL_PERIODIC_SELF_BUFFS");
-	NecrosisButton:RegisterEvent("CHAT_MSG_SPELL_AURA_GONE_SELF");
-	NecrosisButton:RegisterEvent("CHAT_MSG_SPELL_BREAK_AURA");
+	NecrosisButton:RegisterEvent("COMBAT_LOG_EVENT");
 	NecrosisButton:RegisterEvent("PLAYER_REGEN_DISABLED");
 	NecrosisButton:RegisterEvent("PLAYER_REGEN_ENABLED");
 	NecrosisButton:RegisterEvent("UNIT_PET");
-	NecrosisButton:RegisterEvent("SPELLCAST_START");
-	NecrosisButton:RegisterEvent("SPELLCAST_FAILED");
-	NecrosisButton:RegisterEvent("SPELLCAST_INTERRUPTED");
-	NecrosisButton:RegisterEvent("SPELLCAST_STOP");
+	NecrosisButton:RegisterEvent("UNIT_SPELLCAST_START");
+	NecrosisButton:RegisterEvent("UNIT_SPELLCAST_FAILED");
+	NecrosisButton:RegisterEvent("UNIT_SPELLCAST_INTERRUPTED");
+	NecrosisButton:RegisterEvent("UNIT_SPELLCAST_STOP");
 	NecrosisButton:RegisterEvent("LEARNED_SPELL_IN_TAB");
-	NecrosisButton:RegisterEvent("CHAT_MSG_SPELL_SELF_DAMAGE");
 	NecrosisButton:RegisterEvent("PLAYER_TARGET_CHANGED");
 	NecrosisButton:RegisterEvent("TRADE_REQUEST");
 	NecrosisButton:RegisterEvent("TRADE_REQUEST_CANCEL");
@@ -944,9 +943,9 @@ function Necrosis_OnDragStart(button)
 	button:StartMoving();
 end
 
--- Fonction arrêtant le déplacement d'éléments de Necrosis sur l'écran
+-- Function stopping the movement of Necrosis elements on the screen
 function Necrosis_OnDragStop(button)
-	if (button == "NecrosisIcon") then Necrosis_BuildTooltip("OVERALL"); end
+	if (button == "NecrosisIcon") then Necrosis_BuildTooltip(button, "OVERALL", "ANCHOR_LEFT"); end
 	button:StopMovingOrSizing();
 end
 
@@ -972,15 +971,15 @@ function Necrosis_HideGraphTimer()
 	end
 end
 
--- Fonction gérant les bulles d'aide
+-- Function managing the help bubbles (tooltip)
 function Necrosis_BuildTooltip(button, type, anchor)
 
-	-- Si l'affichage des bulles d'aide est désactivé, Bye bye!
+	-- If the display of help bubbles is disabled, Bye bye!
 	if not NecrosisConfig.NecrosisToolTip then
 		return;
 	end
 
-	-- On regarde si la domination corrompue, le gardien de l'ombre ou l'amplification de malédiction sont up (pour tooltips)
+	-- We look at whether corrupt domination, shadow guard or curse amplification are up (for tooltips)
 	local start, duration, start2, duration2, start3, duration3
 	if NECROSIS_SPELL_TABLE[15].ID then
 		start, duration = GetSpellCooldown(NECROSIS_SPELL_TABLE[15].ID, BOOKTYPE_SPELL);
@@ -1001,10 +1000,11 @@ function Necrosis_BuildTooltip(button, type, anchor)
 		duration3 = 1;
 	end
 
-	-- Création des bulles d'aides....
+	-- Creating help bubbles ... (tooltip)
 	GameTooltip:SetOwner(button, anchor);
 	GameTooltip:SetText(NecrosisTooltipData[type].Label);
-	-- ..... pour le bouton principal
+	-- ... for the main button
+
 	if (type == "Main") then
 		GameTooltip:AddLine(NecrosisTooltipData.Main.Soulshard..Soulshards);
 		GameTooltip:AddLine(NecrosisTooltipData.Main.InfernalStone..InfernalStone);
@@ -1378,7 +1378,7 @@ function Necrosis_UpdateIcons()
 
 	-- Bouton des démons
 	-----------------------------------------------
-	local mana = UnitMana("player");
+	local mana = UnitPower("player");
 
 	local ManaPet = {"1", "1", "1", "1", "1", "1"};
 
@@ -1947,16 +1947,16 @@ function Necrosis_SpellSetup()
 	local Invisible = 0;
 	local InvisibleID = 0;
 
-	-- On va parcourir tous les sorts possedés par le Démoniste
+	-- We will go through all the spells possessed by the Warlock
 	while true do
-		local spellName, subSpellName = GetSpellName(spellID, BOOKTYPE_SPELL);
+		local spellName, subSpellName = GetSpellBookItemName(spellID, BOOKTYPE_SPELL);
 
 		if not spellName then
 			do break end
 		end
 
-		-- Pour les sorts avec des rangs numérotés, on compare pour chaque sort les rangs 1 à 1
-		-- Le rang supérieur est conservé
+		-- For spells with numbered ranks, compare for each spell ranks 1 to 1
+		-- The higher rank is kept
 		if (string.find(subSpellName, NECROSIS_TRANSLATION.Rank)) then
 			local found = false;
 			local rank = tonumber(strsub(subSpellName, 6, strlen(subSpellName)));
@@ -2070,12 +2070,12 @@ function Necrosis_SpellSetup()
 	end
 
 	for spellID=1, MAX_SPELLS, 1 do
-        local spellName, subSpellName = GetSpellName(spellID, "spell");
+        local spellName, subSpellName = GetSpellBookItemName(spellID, BOOKTYPE_SPELL);
 		if (spellName) then
 			for index=1, table.getn(NECROSIS_SPELL_TABLE), 1 do
 				if NECROSIS_SPELL_TABLE[index].Name == spellName then
 					Necrosis_MoneyToggle();
-					NecrosisTooltip:SetSpell(spellID, 1);
+					NecrosisTooltip:SetSpellBookItem(spellID, BOOKTYPE_SPELL);
 					local _, _, ManaCost = string.find(NecrosisTooltipTextLeft2:GetText(), "(%d+)");
 					if not NECROSIS_SPELL_TABLE[index].ID then
 						NECROSIS_SPELL_TABLE[index].ID = spellID;
@@ -2098,7 +2098,7 @@ function Necrosis_SpellSetup()
 		NECROSIS_SPELL_TABLE[33].CastTime = 0;
 		NECROSIS_SPELL_TABLE[33].Length = 0;
 		Necrosis_MoneyToggle();
-		NecrosisTooltip:SetSpell(InvisibleID, 1);
+		NecrosisTooltip:SetSpellBookItem(InvisibleID, BOOKTYPE_SPELL);
 		local _, _, ManaCost = string.find(NecrosisTooltipTextLeft2:GetText(), "(%d+)");
 		NECROSIS_SPELL_TABLE[33].Mana = tonumber(ManaCost);
 	end
@@ -2164,17 +2164,26 @@ function Necrosis_UnitHasBuff(unit, effect)
 end
 
 
--- Permet de reconnaitre quand le joueur gagne Crépuscule / Transe de l'ombre
+-- Allows you to recognize when the player wins Twilight / Shadow Trance
 function Necrosis_UnitHasTrance()
 	local ID = -1;
-	for buffID = 0, 24, 1 do
-		local buffTexture = GetPlayerBuffTexture(buffID);
-		if buffTexture == nil then break end
-		if strfind(buffTexture, "Spell_Shadow_Twilight") then
-			ID = buffID;
+	for i=1, 40 do
+		n,_,_,_,_,_,_,_ = UnitAura("player",i)
+		if n == nil then break end
+		if string.find(n, "Spell_Shadow_Twilight") then
+			ID = i;
 			break
 		end
 	end
+	-- for buffID = 0, 24, 1 do
+	-- 	if buffID == nil then break end
+	-- 	local buffTexture = GetPlayerBuffTexture(buffID);
+	-- 	if buffTexture == nil then break end
+	-- 	if strfind(buffTexture, "Spell_Shadow_Twilight") then
+	-- 		ID = buffID;
+	-- 		break
+	-- 	end
+	-- end
 	ShadowTranceID = ID;
 end
 
@@ -2362,10 +2371,14 @@ end
 
 function Necrosis_MoneyToggle()
 	for index=1, 10 do
-		local text = getglobal("NecrosisTooltipTextLeft"..index);
+		local text = _G["NecrosisTooltipTextLeft"..index];
+		if text ~= nil then
 			text:SetText(nil);
-			text = getglobal("NecrosisTooltipTextRight"..index);
+		end
+		text = _G["NecrosisTooltipTextRight"..index];
+		if text ~= nil then
 			text:SetText(nil);
+		end
 	end
 	NecrosisTooltip:Hide();
 	NecrosisTooltip:SetOwner(WorldFrame, "ANCHOR_NONE");
@@ -3055,9 +3068,9 @@ end
 
 
 
--- Bon, pour pouvoir utiliser le Timer sur les sorts instants, j'ai été obligé de m'inspirer de Cosmos
--- Comme je ne voulais pas rendre le mod dépendant de Sea, j'ai repris ses fonctions
--- Apparemment, la version Stand-Alone de ShardTracker a fait pareil :) :)
+-- Well, to be able to use the Timer on spells, I had to take inspiration from Cosmos
+-- As I did not want to make the mod dependent on Sea, I resumed his duties
+-- Apparently, the Stand-Alone version of ShardTracker did the same :) :)
 Necrosis_Hook = function (orig,new,type)
 	if(not type) then type = "before"; end
 	if(not Hx_Hooks) then Hx_Hooks = {}; end

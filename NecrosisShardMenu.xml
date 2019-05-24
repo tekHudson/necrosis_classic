@@ -78,18 +78,18 @@
 				</Anchors>
 				<Scripts>
 					<OnEnter>
-						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
-						GameTooltip:SetText(5-this:GetValue());
+						GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
+						GameTooltip:SetText(5-self:GetValue());
 					</OnEnter>
 					<OnValueChanged>
-						GameTooltip:SetText(5-this:GetValue());
+						GameTooltip:SetText(5-self:GetValue());
 					</OnValueChanged>
 					<OnLeave>
 						GameTooltip:Hide();
 					</OnLeave>
 					<OnMouseUp>
-						GameTooltip:SetText(5-this:GetValue());
-						NecrosisConfig.SoulshardContainer = 4-this:GetValue();
+						GameTooltip:SetText(5-self:GetValue());
+						NecrosisConfig.SoulshardContainer = 4-self:GetValue();
 						Necrosis_SoulshardSwitch("MOVE");
 					</OnMouseUp>
 				</Scripts>
@@ -107,19 +107,19 @@
 				</Anchors>
 				<Scripts>
 					<OnEnter>
-						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
-						if this:GetValue() == 1 then
+						GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
+						if self:GetValue() == 1 then
 							GameTooltip:SetText(NECROSIS_CONFIGURATION.Count.Shard);
-						elseif this:GetValue() == 2 then
+						elseif self:GetValue() == 2 then
 							GameTooltip:SetText(NECROSIS_CONFIGURATION.Count.Inferno);
 						else
 							GameTooltip:SetText(NECROSIS_CONFIGURATION.Count.Rez);
 						end
 					</OnEnter>
 					<OnValueChanged>
-						if this:GetValue() == 1 then
+						if self:GetValue() == 1 then
 							GameTooltip:SetText(NECROSIS_CONFIGURATION.Count.Shard);
-						elseif this:GetValue() == 2 then
+						elseif self:GetValue() == 2 then
 							GameTooltip:SetText(NECROSIS_CONFIGURATION.Count.Inferno);
 						else
 							GameTooltip:SetText(NECROSIS_CONFIGURATION.Count.Rez);
@@ -129,7 +129,7 @@
 						GameTooltip:Hide();
 					</OnLeave>
 					<OnMouseUp>
-						NecrosisConfig.CountType = this:GetValue();
+						NecrosisConfig.CountType = self:GetValue();
 						Necrosis_BagExplore();
 					</OnMouseUp>
 				</Scripts>
@@ -147,15 +147,15 @@
 				</Anchors>
 				<Scripts>
 					<OnEnter>
-						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
-						if this:GetValue() == 1 then
+						GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
+						if self:GetValue() == 1 then
 							GameTooltip:SetText(NECROSIS_CONFIGURATION.Count.Shard);
 						else
 							GameTooltip:SetText(NECROSIS_CONFIGURATION.Count.Rez);
 						end
 					</OnEnter>
 					<OnValueChanged>
-						if this:GetValue() == 1 then
+						if self:GetValue() == 1 then
 							GameTooltip:SetText(NECROSIS_CONFIGURATION.Count.Shard);
 						else
 							GameTooltip:SetText(NECROSIS_CONFIGURATION.Count.Rez);
@@ -165,7 +165,7 @@
 						GameTooltip:Hide();
 					</OnLeave>
 					<OnMouseUp>
-						NecrosisConfig.Circle = this:GetValue();
+						NecrosisConfig.Circle = self:GetValue();
 						Necrosis_BagExplore();
 					</OnMouseUp>
 				</Scripts>
@@ -181,42 +181,42 @@
 						</Offset>
 					</Anchor>
 				</Anchors>
-				<Scripts>	
+				<Scripts>
 					<OnEnter>
-						GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
-						if (this:GetValue() == 1) then
+						GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
+						if (self:GetValue() == 1) then
 							GameTooltip:SetText(NECROSIS_COLOR_TOOLTIP.Pink);
-						elseif (this:GetValue() == 2) then
+						elseif (self:GetValue() == 2) then
 							GameTooltip:SetText(NECROSIS_COLOR_TOOLTIP.Blue);
-						elseif (this:GetValue() == 3) then
+						elseif (self:GetValue() == 3) then
 							GameTooltip:SetText(NECROSIS_COLOR_TOOLTIP.Orange);
-						elseif (this:GetValue() == 4) then
+						elseif (self:GetValue() == 4) then
 							GameTooltip:SetText(NECROSIS_COLOR_TOOLTIP.Turquoise);
-						elseif (this:GetValue() == 5) then
+						elseif (self:GetValue() == 5) then
 							GameTooltip:SetText(NECROSIS_COLOR_TOOLTIP.Purple);
 						else
 							GameTooltip:SetText(NECROSIS_COLOR_TOOLTIP.X);
 						end
 					</OnEnter>
 					<OnValueChanged>
-						GameTooltip:SetText(this:GetValue());
-						if (this:GetValue() == 1) then
+						GameTooltip:SetText(self:GetValue());
+						if (self:GetValue() == 1) then
 							GameTooltip:SetText(NECROSIS_COLOR_TOOLTIP.Pink);
 							NecrosisConfig.NecrosisColor = "Rose";
 							NecrosisButton:SetNormalTexture("Interface\\AddOns\\Necrosis\\UI\\Rose\\Shard16");
-						elseif (this:GetValue() == 2) then
+						elseif (self:GetValue() == 2) then
 							GameTooltip:SetText(NECROSIS_COLOR_TOOLTIP.Blue);
 							NecrosisConfig.NecrosisColor = "Bleu";
 							NecrosisButton:SetNormalTexture("Interface\\AddOns\\Necrosis\\UI\\Bleu\\Shard16");
-						elseif (this:GetValue() == 3) then
+						elseif (self:GetValue() == 3) then
 							GameTooltip:SetText(NECROSIS_COLOR_TOOLTIP.Orange);
 							NecrosisConfig.NecrosisColor = "Orange";
 							NecrosisButton:SetNormalTexture("Interface\\AddOns\\Necrosis\\UI\\Orange\\Shard16");
-						elseif (this:GetValue() == 4) then
+						elseif (self:GetValue() == 4) then
 							GameTooltip:SetText(NECROSIS_COLOR_TOOLTIP.Turquoise);
 							NecrosisConfig.NecrosisColor = "Turquoise";
 							NecrosisButton:SetNormalTexture("Interface\\AddOns\\Necrosis\\UI\\Turquoise\\Shard16");
-						elseif (this:GetValue() == 5) then
+						elseif (self:GetValue() == 5) then
 							GameTooltip:SetText(NECROSIS_COLOR_TOOLTIP.Purple);
 							NecrosisConfig.NecrosisColor = "Violet";
 							NecrosisButton:SetNormalTexture("Interface\\AddOns\\Necrosis\\UI\\Violet\\Shard16");
@@ -245,7 +245,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.SoulshardSort = true;
 						else
 							NecrosisConfig.SoulshardSort = false;
@@ -266,7 +266,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.SoulshardDestroy = true;
 						else
 							NecrosisConfig.SoulshardDestroy = false;
@@ -287,7 +287,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						if (this:GetChecked()) then
+						if (self:GetChecked()) then
 							NecrosisConfig.ShowCount = true;
 						else
 							NecrosisConfig.ShowCount = false;

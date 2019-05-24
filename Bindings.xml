@@ -2,28 +2,28 @@
    	<Binding name="SOULSTONE" header="NECRO_BIND">
    			Necrosis_UseItem("Soulstone");
    	</Binding>
-   	<Binding name="HEALTHSTONE" header="NECRO_BIND">
+   	<Binding name="HEALTHSTONE">
     		Necrosis_UseItem("Healthstone");
    	</Binding>
-   	<Binding name="SPELLSTONE" header="NECRO_BIND">
+   	<Binding name="SPELLSTONE">
     		Necrosis_UseItem("Spellstone", "Binding");
    	</Binding>
-   	<Binding name="FIRESTONE" header="NECRO_BIND">
+   	<Binding name="FIRESTONE">
     		Necrosis_UseItem("Firestone");
    	</Binding>
-	<Binding name="STEED" header="NECRO_BIND">
+	<Binding name="STEED">
     		Necrosis_UseItem("Mount");
    	</Binding>
-	<Binding name="WARD" header="NECRO_BIND">
+	<Binding name="WARD">
 			Necrosis_BuffCast(43);
     </Binding>
-	<Binding name="BANISH" header="NECRO_BIND">
+	<Binding name="BANISH">
 			Necrosis_BuffCast(9);
     </Binding>
-	<Binding name="LIFETAP" header="NECRO_BIND">
+	<Binding name="LIFETAP">
 			Necrosis_Toggle("LeftButton");
     </Binding>
-	<Binding name="REDOCURSE" header="NECRO_BIND">
+	<Binding name="REDOCURSE">
 			Necrosis_CurseMenu("MiddleButton");
     </Binding>
 </Bindings>
